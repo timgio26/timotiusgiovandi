@@ -1,103 +1,206 @@
+// import Image from "next/image";
+// import { FaGithubSquare } from "react-icons/fa";
+import { ContactUs } from "@/components/ContactForm";
+import { ProjectTile } from "@/components/ProjectTile";
+import profilePic from "../../public/DSC_2071a_ok (1).jpg";
+import bookGetherImg from "../../public/gallery.jpg"
+import openWheelImg from "../../public/Your paragraph text (2).jpg"
+import cdpBeImg from "../../public/Your paragraph text.png"
 import Image from "next/image";
+
+const myProjects = [
+  {
+    title: "BookGether",
+    desc: "BookGether is book sharing platform. Our mission is to reduce paper utilization and production by encouraging the sharing of books, especially those that are often read just once.",
+    tools: ["TS", "Zustand", "Zod", "Tailwind", "Shadcn", "Supabase"],
+    img:bookGetherImg,
+    url: [
+      {
+        url: "https://github.com/timgio26/bookgether",
+        icons: "github",
+      },
+      {
+        url: "https://github.com/timgio26/openwheel",
+        icons: "app",
+       
+      },
+    ],
+  },
+  {
+    title: "OpenWheel",
+    desc: "ride-sharing application designed to connect people who have similar travel routes, enabling them to share a ride in a single vehicle",
+    tools: ["TS", "Redux", "Zod", "Tailwind", "Supabase"],
+    img:openWheelImg,
+    url: [
+      {
+        url: "https://github.com/timgio26/openwheel",
+        icons: "github",
+      },
+      {
+        url: "https://openwheel.netlify.app/",
+        icons: "app",
+      },
+    ],
+  },
+  {
+    title: "Customer Data Platform Backend",
+    desc: "Tools to manage customer & historical services for indonesian water treatment company",
+    tools: ["Python", "Django"],
+    img:cdpBeImg,
+    url: [
+      {
+        url: "https://github.com/timgio26/CDP_BE",
+        icons: "github",
+      },
+      {
+        url: "https://timgio.pythonanywhere.com/",
+        icons: "app",
+      },
+    ],
+  },
+];
+
+// import { FaLinkedin,FaGithubSquare } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div>
+      {/* top section */}
+      <div className="flex flex-col sm:flex-row md:gap-20 justify-center">
+        <div className="flex justify-center">
+          <div className="h-60 w-60 rounded-full m-5 overflow-hidden border-4">
+            {/* this is photo */}
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={profilePic}
+              alt="Picture of the author"
+              className="grayscale-25"
+              // width={500} automatically provided
+              // height={500} automatically provided
+              // blurDataURL="data:..." automatically provided
+              // placeholder="blur" // Optional blur-up while loading
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="flex flex-col items-center justify-center gap-3">
+          <span>Hello I&apos;m</span>
+          <div className="flex flex-col items-center justify-center">
+            <span className="font-semibold text-3xl">Timotius Giovandi</span>
+            <span>Fullstack Developer | Learner</span>
+          </div>
+          <div className="flex flex-row gap-5">
+            <div className="px-5 py-1 rounded-full bg-gray-900 dark:bg-amber-900 text-gray-50 cursor-pointer hover:opacity-50 transition-opacity">
+              Download CV
+            </div>
+            <div className="px-5 py-1 rounded-full border-gray-900 border-2 dark:border-amber-900 cursor-pointer hover:opacity-50 transition-opacity">
+              Contact Me
+            </div>
+          </div>
+          {/* <div className="flex flex-row gap-4">
+            <div><FaGithubSquare size={40}/></div>
+            <div><FaLinkedin size={40}/></div>
+          </div> */}
+        </div>
+      </div>
+
+      {/* experice section */}
+      <div className="flex justify-center mt-5">
+        <span className="font-semibold border-amber-900 border-b-4 pb-3">
+          Experience
+        </span>
+      </div>
+      <div className="flex flex-col items-center">
+        <div className="flex flex-col w-10/12 bg-gray-300/10 p-5 rounded-xl my-5 shadow">
+          <span className="text-2xl font-bold">
+            Ecommerce Analyst & Web App Developer
+          </span>
+          <span>2020 - 2024</span>
+          <span className="text-amber-900 dark:text-amber-500">
+            PT Nutrifood Indonesia
+          </span>
+          <span>
+            Consolidate e-commerce sales data with 99% accuracy using Python to
+            support decision-making. Conduct data exploration, cleaning, and
+            feature engineering to guide promotions and marketing. Develop and
+            maintain a web application to improve internal processes, boosting
+            price accuracy to 95%.
+          </span>
+        </div>
+      </div>
+
+      {/* education section */}
+      <div className="flex justify-center mt-5">
+        <span className="font-semibold border-amber-900 border-b-4 pb-3">
+          Education
+        </span>
+      </div>
+      <div className="flex flex-col items-center">
+        <div className="flex flex-col w-10/12 bg-gray-300/10 p-5 rounded-xl mt-5 shadow">
+          <span className="text-2xl font-bold">Business Informatics</span>
+          <span>Master | 2024 - Current</span>
+          <span className="text-amber-900 dark:text-amber-500">
+            Univerity of Gdansk, Poland
+          </span>
+          {/* <span>Ecommerce Analyst & Web App Developer</span> */}
+          <div className="border-t mt-2">
+            <span>Relevant Coursework</span>
+            <ul className="list-disc list-inside">
+              <li>Design of Human Computer Interaction</li>
+              <li>Business Applications for Small/Medium Enterprises</li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex flex-col w-10/12 bg-gray-300/10 p-5 rounded-xl mt-5 shadow">
+          <span className="text-2xl font-bold">Chemical Engineering</span>
+          <span>Bachelor | GPA: 3.66/4.00 | 2015 - 2019</span>
+          <span className="text-amber-900 dark:text-amber-500">
+            Institut Teknologi Sepuluh Nopember Surabaya, Indonesia
+          </span>
+          {/* <span>Ecommerce Analyst & Web App Developer</span> */}
+          <div className="border-t mt-2">
+            <span>Activities</span>
+            <ul className="list-disc list-inside">
+              <li>
+                Chem E Car Team, compete in Indonesia, Australia and United
+                States
+              </li>
+              <li>
+                Process engineer intern at ammonia fertilizer factory PT Pupuk
+                Sriwidjaja
+              </li>
+              <li>Analytical chemistry lab assistant</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Project section */}
+      <div className="flex justify-center mt-5">
+        <span className="font-semibold border-amber-900 border-b-4 pb-3">
+          Projects
+        </span>
+      </div>
+      <div className="flex flex-col items-center">
+        <div className="flex flex-col w-10/12  my-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {myProjects.map((each, index) => (
+              <ProjectTile data={each} key={index} />
+            ))}
+            {/* <ProjectTile data={}/> */}
+            {/* <ProjectTile />
+            <ProjectTile /> */}
+          </div>
+        </div>
+      </div>
+
+      {/* Contact section */}
+      <div className="flex justify-center mt-5">
+        <span className="font-semibold border-amber-900 border-b-4 pb-3">
+          Contact
+        </span>
+      </div>
+      <div className="flex flex-col items-center px-5">
+        <ContactUs />
+      </div>
     </div>
   );
 }
