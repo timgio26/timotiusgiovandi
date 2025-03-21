@@ -43,7 +43,7 @@ export const ContactUs = () => {
   };
 
   return (
-    <form onSubmit={sendEmail} className="flex flex-col w-full sm:w-1/2 gap-1">
+    <form onSubmit={sendEmail} className="flex flex-col w-full sm:w-1/2 gap-1" id="contact_mes">
       <label className="text-sm font-light">Name</label>
       <input
         type="text"
@@ -65,7 +65,7 @@ export const ContactUs = () => {
       <label className="text-sm font-light">Message</label>
       <textarea
         name="message"
-        className="border focus:ring-0 outline-0"
+        className="border focus:ring-0 outline-0 h-20"
         value={contactForm?.message}
         onChange={handleChange}
         required

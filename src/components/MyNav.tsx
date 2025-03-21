@@ -20,9 +20,9 @@ export function MyNav() {
           <span>Timotius Giovandi</span>
         </div>
         <div className="hidden sm:flex flex-row gap-4 mx-5 items-center">
-          <span className="cursor-pointer">About Me</span>
-          <span className="cursor-pointer">Project</span>
-          <span className="cursor-pointer">Contact</span>
+          <span className="cursor-pointer"><a href="#about_me">About Me</a></span>
+          <span className="cursor-pointer"><a href="#my_project">Project</a></span>
+          <span className="cursor-pointer"><a href="#contact_me">Contact</a></span>
           <ModeToggle/>
         </div>
         <div className="sm:hidden">
@@ -32,9 +32,9 @@ export function MyNav() {
         </div>
       </div>
       <div className="flex flex-col px-5 bg-gray-300/10 gap-1 py-2" hidden={!showMenu}>
-        <span>About Me</span>
-        <span>Project</span>
-        <span>Contact</span>
+        <span><a href="#about_me">About Me</a></span>
+        <span><a href="#my_project">Project</a></span>
+        <span><a href="#contact_me">Contact</a></span>
         <div className="flex flex-row justify-end">
         <ModeToggle/>
 
