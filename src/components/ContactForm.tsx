@@ -43,7 +43,7 @@ export const ContactUs = () => {
   };
 
   return (
-    <form onSubmit={sendEmail} className="flex flex-col w-full sm:w-1/2 gap-1" id="contact_mes">
+    <form onSubmit={sendEmail} className="flex flex-col w-full sm:w-1/2 gap-1" id="contact_me">
       <label className="text-sm font-light">Name</label>
       <input
         type="text"
