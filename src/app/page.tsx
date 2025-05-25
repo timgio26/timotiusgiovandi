@@ -89,7 +89,7 @@ export default function Home() {
           </div>
           <div className="flex flex-row gap-5">
             <div className="px-5 py-1 rounded-full bg-gray-900 dark:bg-amber-900 text-gray-50 cursor-pointer hover:opacity-50 transition-opacity">
-            <a href="/CV_Timotius Giovandi v2_1.pdf" download="CV_Timotius Giovandi">Download CV</a>
+            <a href="/CV_Timotius Giovandi 2025 v2_1.pdf" download="CV_Timotius Giovandi">Download CV</a>
             </div>
             <div className="px-5 py-1 rounded-full border-gray-900 border-2 dark:border-amber-900 cursor-pointer hover:opacity-50 transition-opacity">
             <a href="#contact_me">Contact Me</a>
