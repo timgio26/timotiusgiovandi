@@ -31,7 +31,7 @@ export function ProjectTile({ data }: ProjectTileProp) {
           <Image
             src={data.img}
             alt="Picture of the project"
-            className="grayscale-25"
+            className="grayscale-25 hover:scale-105 transition-transform ease-in-out"
             // fill={true}
           />
         </div>

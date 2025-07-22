@@ -32,7 +32,7 @@ const myProjects:IMyProjectInt = [
         icons: "github",
       },
       {
-        url: "https://github.com/timgio26/openwheel",
+        url: "https://bookgether.netlify.app/",
         icons: "app",
       },
     ],
