@@ -4,11 +4,23 @@ import profilePic from "../../public/DSC_2071a_ok (1).jpg";
 import bookGetherImg from "../../public/gallery.jpg";
 import openWheelImg from "../../public/Your paragraph text (2).jpg";
 import cdpBeImg from "../../public/Your paragraph text.png";
-import Image from "next/image";
+import linquizticImg from "../../public/linquiztic.png"
+import Image, { StaticImageData } from "next/image";
 import { ScrollHorizontoalIndocator } from "@/components/ScrollHorizontalIndicator";
 import { FadeOnView } from "@/components/FadeOnView";
 
-const myProjects = [
+
+type IMyProjectInt = {
+  title: string;
+  desc: string;
+  tools: string[];
+  img: StaticImageData;
+  url: {
+    url: string;
+    icons: string;
+  }[];
+}[];
+const myProjects:IMyProjectInt = [
   {
     title: "BookGether",
     desc: "BookGether is book sharing platform. Our mission is to reduce paper utilization and production by encouraging the sharing of books, especially those that are often read just once.",
@@ -57,6 +69,10 @@ const myProjects = [
       },
     ],
   },
+  {
+    title:"Linquiztic (on progress)",tools:["React","TS","Tailwind",".NET","C#","Firebase"],desc:"Linquiztic is an fullstack app that allow user to learn new vocabulary & building sentence with the help of AI so every user has personalized journey",
+    url:[{url:"https://github.com/timgio26/linquiztic_fe",icons:"github"}],img:linquizticImg
+  }
 ];
 
 // import { FaLinkedin,FaGithubSquare } from "react-icons/fa";
